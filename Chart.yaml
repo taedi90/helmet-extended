@@ -1,0 +1,19 @@
+apiVersion: v2
+name: helmet-extended
+description: "helmet 차트를 wrapping 한 라이브러리 차트입니다. StatefulSet 지원 등 helmet 차트에서 지원하지 않는 기능을 커버합니다."
+
+type: library
+
+version: 0.1.0
+appVersion: 0.1.0
+
+dependencies:
+  - name: helmet
+    version: 0.12.0
+    repository: https://charts.companyinfo.dev
+    # import-values: # <== It is mandatory if you want to import the Helmet default values.
+    #   - defaults
+
+maintainers:
+  - name: taesoo
+    email: taesoo@users.noreply.github.com

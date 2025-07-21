@@ -1,0 +1,21 @@
+## Helmet Extended NOTICE
+
+This software is a derivative work of the following open-source projects:
+
+### 1. Helmet Chart
+
+- **Copyright**: [Original Copyright Holder of Helmet Chart]
+- **Source**: https://github.com/companyinfo/helm-charts/blob/main/charts/helmet
+- **License**: Apache License 2.0
+
+This software includes modifications to the original Helmet Chart to support `StatefulSet` deployments and other enhancements. The original license of the Helmet Chart is maintained.
+
+### 2. Bitnami Common Chart
+
+The Helmet Chart, which this software depends on, itself relies on the Bitnami Common Chart.
+
+- **Copyright**: Copyright (c) 2023 Bitnami
+- **Source**: https://github.com/bitnami/charts/tree/main/bitnami/common
+- **License**: Apache License 2.0
+
+All licenses of the dependent components are complied with. The full text of the Apache License 2.0 can be found in the `LICENSE` file in the root directory of this project.

@@ -1,0 +1,6 @@
+{{- define "helmet-extended.extraList" -}}
+{{- range .Values.extraList }}
+---
+{{ include "common.tplvalues.render" (dict "value" . "context" $) }}
+{{- end }}
+{{- end -}}

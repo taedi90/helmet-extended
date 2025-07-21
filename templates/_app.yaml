@@ -1,0 +1,40 @@
+{{- define "helmet-extended.app" -}}
+{{- if .Values.configMap.data }}
+{{ include "helmet.configmap" . }}
+{{- end }}
+
+{{- if .Values.image.repository }}
+{{- if eq .Values.kind "StatefulSet" }}
+{{ include "helmet-extended.statefulset" . }}
+{{- else }}
+{{ include "helmet.deployment" . }}
+{{- end }}
+{{- end }}
+
+{{ include "helmet.persistence" . }}
+
+{{ include "helmet.hpa" . }}
+{{ include "helmet.ingress" . }}
+
+{{- if or .Values.secret.data .Values.secret.stringData }}
+{{ include "helmet.secret" . }}
+{{- end }}
+
+{{ include "helmet.tls.secrets" . }}
+{{ include "helmet.tls.selfsigned" . }}
+
+{{- if and .Values.ports .Values.service.ports }}
+{{ include "helmet.service" . }}
+{{- end }}
+
+{{ include "helmet.serviceaccount" . }}
+{{ include "helmet.servicemonitor" . }}
+{{ include "helmet.podmonitor" . }}
+
+{{- if .Values.extraList }}
+{{ include "helmet-extended.extraList" . }}
+{{- end }}
+
+{{- end }}
+
+
