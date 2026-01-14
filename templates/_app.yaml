@@ -7,7 +7,7 @@
 {{- if eq .Values.kind "StatefulSet" }}
 {{ include "helmet-extended.statefulset" . }}
 {{- else }}
-{{ include "helmet.deployment" . }}
+{{ include "helmet-extended.deployment" . }}
 {{- end }}
 {{- end }}
 

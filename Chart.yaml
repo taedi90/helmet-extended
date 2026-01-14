@@ -4,8 +4,8 @@ description: "helmet 차트를 wrapping 한 라이브러리 차트입니다. Sta
 
 type: library
 
-version: 0.1.0
-appVersion: 0.1.0
+version: 0.1.1
+appVersion: 0.1.1
 
 dependencies:
   - name: helmet
@@ -16,4 +16,4 @@ dependencies:
 
 maintainers:
   - name: taesoo
-    email: taesoo@users.noreply.github.com
+    email: taedi90@gmail.com
