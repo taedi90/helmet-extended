@@ -4,12 +4,12 @@ description: "helmet 차트를 wrapping 한 라이브러리 차트입니다. Sta
 
 type: library
 
-version: 0.1.1
-appVersion: 0.1.1
+version: 0.1.2
+appVersion: 0.1.2
 
 dependencies:
   - name: helmet
-    version: 0.12.0
+    version: 0.14.0
     repository: https://charts.companyinfo.dev
     # import-values: # <== It is mandatory if you want to import the Helmet default values.
     #   - defaults
