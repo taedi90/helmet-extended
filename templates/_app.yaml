@@ -27,7 +27,7 @@
 {{ include "helmet.service" . }}
 {{- end }}
 
-{{ include "helmet.serviceaccount" . }}
+{{ include "helmet-extended.serviceaccount" . }}
 {{ include "helmet.servicemonitor" . }}
 {{ include "helmet.podmonitor" . }}
 
