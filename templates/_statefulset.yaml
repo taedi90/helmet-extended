@@ -51,7 +51,7 @@ spec:
         {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 8 }}
         {{- end }}
     spec:
-      {{- if .Values.nodeName }} 
+      {{- if hasKey .Values "hostNetwork" }} 
       hostNetwork: {{ .Values.hostNetwork }}
       {{- end }}
       {{- if .Values.nodeName }} 
@@ -174,7 +174,7 @@ spec:
       {{- if .Values.terminationGracePeriodSeconds }}
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
       {{- end }}
-      serviceAccountName: {{ include "helmet.serviceAccountName" . }}
+      serviceAccountName: {{ include "helmet-extended.serviceAccountName" . }}
   {{- if .Values.extraVolumeClaimTemplates }}
   volumeClaimTemplates: {{- include "common.tplvalues.render" (dict "value" .Values.extraVolumeClaimTemplates "context" $) | nindent 4 }}
   {{- end }}

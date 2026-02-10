@@ -36,7 +36,7 @@ spec:
         {{- end }}
       labels: {{- include "common.labels.standard" ( dict "customLabels" $podLabels "context" $ ) | nindent 8 }}
     spec:
-      {{- if .Values.nodeName }} 
+      {{- if hasKey .Values "hostNetwork" }}
       hostNetwork: {{ .Values.hostNetwork }}
       {{- end }}
       {{- if .Values.nodeName }} 
@@ -171,5 +171,5 @@ spec:
       {{- if .Values.terminationGracePeriodSeconds }}
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
       {{- end }}
-      serviceAccountName: {{ include "helmet.serviceAccountName" . }}
+      serviceAccountName: {{ include "helmet-extended.serviceAccountName" . }}
 {{- end -}}
