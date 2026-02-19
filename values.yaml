@@ -9,6 +9,7 @@ exports:
 
     nodeName: ''
     hostNetwork: false
+    enableServiceLinks: false
 
     ## @param extraList Array of extra objects to deploy with the release
     ## extraList:
