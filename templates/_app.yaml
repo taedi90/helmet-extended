@@ -1,5 +1,5 @@
 {{- define "helmet-extended.app" -}}
-{{- if .Values.configMap.data }}
+{{- if and .Values.configMap.enabled .Values.configMap.data }}
 {{ include "helmet.configmap" . }}
 {{- end }}
 
@@ -36,5 +36,4 @@
 {{- end }}
 
 {{- end }}
-
 

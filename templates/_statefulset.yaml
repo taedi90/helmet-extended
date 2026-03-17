@@ -82,7 +82,7 @@ spec:
           {{- if .Values.envVars }}
           env: {{- include "helmet.toEnvArray" (dict "envVars" .Values.envVars "context" $) | indent 12 }}
           {{- end }}
-          {{- if or .Values.envVarsConfigMap .Values.envVarsSecret }}
+          {{- if or .Values.envVarsConfigMap .Values.envVarsSecret .Values.extraEnvFrom }}
           envFrom:
             {{- if .Values.envVarsConfigMap }}
             - configMapRef:
@@ -91,6 +91,9 @@ spec:
             {{- if .Values.envVarsSecret }}
             - secretRef:
                 name: {{ include "common.tplvalues.render" (dict "value" .Values.envVarsSecret "context" $) }}
+            {{- end }}
+            {{- if .Values.extraEnvFrom }}
+            {{- include "common.tplvalues.render" (dict "value" .Values.extraEnvFrom "context" $) | nindent 12 }}
             {{- end }}
           {{- end }}
           {{- if .Values.ports }}

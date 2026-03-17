@@ -459,6 +459,10 @@ exports:
     ##
     envVarsSecret: ""
 
+    ## @param extraEnvFrom Additional envFrom entries appended after envVarsConfigMap/envVarsSecret
+    ##
+    extraEnvFrom: []
+
     ## Add an horizontal pod autoscaler
     ## ref: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
     ## @param autoscaling.enabled Deploy a HorizontalPodAutoscaler object for the APP deployment
@@ -480,6 +484,7 @@ exports:
     ## ref: https://kubernetes.io/docs/concepts/configuration/configmap/
     ##
     configMap:
+      enabled: true
       mounted: false
       mountPath: "/app/config"
       subPath: ""
